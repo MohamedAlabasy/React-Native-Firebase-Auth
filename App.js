@@ -11,6 +11,7 @@ import { View, Text } from 'react-native';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './Screens/Splash';
+import Onboard from './Screens/Onboard';
 import SignIn from './Screens/SignIn';
 import SignUp from './Screens/SingUp';
 import Home from './Screens/Home';
@@ -46,6 +47,7 @@ function App() {
           }}
         >
           <Stack.Screen name="Splash" component={Splash} />
+          <Stack.Screen name="Onboard" component={Onboard} />
           <Stack.Screen name="SignIn" component={SignIn} />
           <Stack.Screen name="SignUp" component={SignUp} />
           <Stack.Screen name="Home" component={Home} />

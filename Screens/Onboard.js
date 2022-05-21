@@ -2,13 +2,12 @@
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import { StyleSheet, Image } from 'react-native'
-// import AppStatusBarComponents from '../Components/AppStatusBarComponents';
-import AsyncStorage from '@react-native-async-storage/async-storage';
+// import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Onboard extends React.Component {
-    componentDidMount() {
-        AsyncStorage.setItem('isFirstTime', 'yes')
-    }
+    // componentDidMount() {
+    //     AsyncStorage.setItem('isFirstTime', 'yes')
+    // }
     render() {
         return (
             <Onboarding
@@ -20,19 +19,19 @@ export default class Onboard extends React.Component {
                     {
                         bottomBarHeight: 80,
                         backgroundColor: '#fff',
-                        image: <Image style={style.image} source={require('../assets/onboard1.png')} />,
+                        // image: <Image style={style.image} source={require('../assets/onboard1.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
                         backgroundColor: '#fff',
-                        image: <Image style={style.image} source={require('../assets/onboard2.png')} />,
+                        // image: <Image style={style.image} source={require('../assets/onboard2.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
                         backgroundColor: '#fff',
-                        image: <Image style={style.image} source={require('../assets/onboard3.png')} />,
+                        // image: <Image style={style.image} source={require('../assets/onboard3.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     }
@@ -41,7 +40,7 @@ export default class Onboard extends React.Component {
         )
     }
     goToHomeScreen() {
-        this.props.navigation.replace("Login");
+        this.props.navigation.replace("SignIn");
     }
 }
 

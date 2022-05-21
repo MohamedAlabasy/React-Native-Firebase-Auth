@@ -12,9 +12,9 @@ export default class Splash extends React.Component {
         setTimeout(() => {
             //             // To prevent back to splash again
             //             // this.props.navigation.replace("Home");
-            //             // this.props.navigation.replace("Onboard");
+            this.props.navigation.replace("Onboard");
             //             if (!res) {
-            this.props.navigation.replace("Home");
+            // this.props.navigation.replace("Home");
             //             } else {
             //                 this.props.navigation.replace("Onboard");
             //             }
