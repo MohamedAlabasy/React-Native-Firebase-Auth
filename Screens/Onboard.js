@@ -2,12 +2,12 @@
 import React from 'react';
 import Onboarding from 'react-native-onboarding-swiper';
 import { StyleSheet, Image } from 'react-native'
-// import AsyncStorage from '@react-native-async-storage/async-storage';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default class Onboard extends React.Component {
-    // componentDidMount() {
-    //     AsyncStorage.setItem('isFirstTime', 'yes')
-    // }
+    componentDidMount() {
+        AsyncStorage.setItem('isFirstTime', 'yes')
+    }
     render() {
         return (
             <Onboarding

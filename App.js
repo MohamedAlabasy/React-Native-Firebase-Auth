@@ -1,3 +1,4 @@
+/* eslint-disable prettier/prettier */
 /* eslint-disable no-shadow */
 /* eslint-disable curly */
 /* eslint-disable react-hooks/exhaustive-deps */
@@ -6,8 +7,7 @@
 /* eslint-disable prettier/prettier */
 // In App.js in a new project
 
-import * as React from 'react';
-import { View, Text } from 'react-native';
+import React from 'react';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import Splash from './Screens/Splash';
@@ -37,7 +37,6 @@ function App() {
   }, []);
 
   if (initializing) return null;
-
   if (!user) {
     return (
       <NavigationContainer>
@@ -65,7 +64,6 @@ function App() {
         <Stack.Screen name="Splash" component={Splash} />
         <Stack.Screen name="Home" component={Home} />
         <Stack.Screen name="SignIn" component={SignIn} />
-        {/* <Stack.Screen name="SignUp" component={SignUp} /> */}
       </Stack.Navigator>
     </NavigationContainer>
   );
