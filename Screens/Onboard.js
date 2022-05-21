@@ -19,19 +19,19 @@ export default class Onboard extends React.Component {
                     {
                         bottomBarHeight: 80,
                         backgroundColor: '#fff',
-                        // image: <Image style={style.image} source={require('../assets/onboard1.png')} />,
+                        image: <Image style={style.image} source={require('../Assets/onboard1.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
                         backgroundColor: '#fff',
-                        // image: <Image style={style.image} source={require('../assets/onboard2.png')} />,
+                        image: <Image style={style.image} source={require('../Assets/onboard2.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     },
                     {
                         backgroundColor: '#fff',
-                        // image: <Image style={style.image} source={require('../assets/onboard3.png')} />,
+                        image: <Image style={style.image} source={require('../Assets/onboard3.png')} />,
                         title: 'Onboarding',
                         subtitle: 'Done with React Native Onboarding Swiper',
                     }

@@ -1,3 +1,8 @@
+/* eslint-disable semi */
+/* eslint-disable react-hooks/exhaustive-deps */
+/* eslint-disable prettier/prettier */
+/* eslint-disable curly */
+/* eslint-disable no-shadow */
 /* eslint-disable prettier/prettier */
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable quotes */
@@ -47,9 +52,9 @@ export default function Splash({ navigation }) {
             {/* to control in Control StatusBar */}
             < Image
                 style={style.splashIcon}
-            // source={require('../assets/splash.png')}
+                source={require('../Assets/splash.png')}
             />
-            <ActivityIndicator size="large" color="#fff" style={{ marginTop: 30 }} />
+            <ActivityIndicator size="large" color="#521900" style={{ marginTop: 30 }} />
             {goToHomeScreen()}
         </View >
     )
@@ -62,7 +67,6 @@ const style = StyleSheet.create({
         flex: 1,
         alignItems: 'center',
         justifyContent: 'center',
-        backgroundColor: '#4a5cD0',
     },
     splashIcon: {
         width: 250,
