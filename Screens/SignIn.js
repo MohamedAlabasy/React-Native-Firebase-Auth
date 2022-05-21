@@ -9,20 +9,27 @@ import {
     TouchableOpacity,
     TextInput,
     Image,
-    // ScrollView,
+    ActivityIndicator
 } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
 export default function SignIn({ navigation }) {
     const [email, onChangeEmail] = React.useState('a@a.com');
     const [password, onChangePassword] = React.useState('123456');
-
+    const [isLoader, setIsLoader] = React.useState('none');
+    const [showText, setShowText] = React.useState('flex');
+    const [isBtnDisabled, setIsBtnDisabled] = React.useState(false);
+    React.useEffect(() => {
+        setShowText('flex');
+        setIsLoader('none');
+        setIsBtnDisabled(false)
+    }, []);
     return (
         <View style={style.container}>
             <View style={style.inputContainer}>
                 <Image
                     style={style.image}
-                // source={require('../assets/mainImage.png')}
+                    source={require('../Assets/Splash.png')}
                 />
                 <TextInput
                     style={style.input}
@@ -41,12 +48,20 @@ export default function SignIn({ navigation }) {
             </View>
             <View style={style.btnContainer}>
                 <TouchableOpacity
+                    disabled={isBtnDisabled}
                     onPress={() => {
+                        setShowText('none');
+                        setIsLoader('flex');
+                        setIsBtnDisabled(true)
                         doLogin(email, password, navigation);
-                        // auth().signInWithEmailAndPassword(email, password)
                     }}
                     style={style.btn}>
-                    <Text style={style.text}>Login</Text>
+                    <Text style={[style.text, { display: showText }]}>Login</Text>
+                    <ActivityIndicator style={{
+                        position: 'absolute',
+                        alignSelf: 'center',
+                        display: isLoader,
+                    }} size={'large'} color={'#fff'} />
                 </TouchableOpacity>
 
                 <View style={{ flexDirection: 'row', marginTop: 10 }}>
@@ -61,7 +76,7 @@ export default function SignIn({ navigation }) {
 }
 function doLogin(user, pass, navigation) {
     auth().signInWithEmailAndPassword(user, pass).then(() => {
-        navigation.navigate('Home');
+        navigation.replace('Home');
     });
 }
 
@@ -99,6 +114,7 @@ const style = StyleSheet.create({
         width: '90%',
         height: 50,
         justifyContent: 'center',
+
     },
     text: {
         fontSize: 16,

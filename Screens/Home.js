@@ -2,28 +2,40 @@
 /* eslint-disable react-native/no-inline-styles */
 /* eslint-disable prettier/prettier */
 import React from 'react';
-import { View, TouchableOpacity, StyleSheet, Text } from 'react-native';
+import { View, TouchableOpacity, StyleSheet, Text, ActivityIndicator } from 'react-native';
 import auth from '@react-native-firebase/auth';
 
 export default function Home({ navigation }) {
-    // const [initializing] = React.useState(true);
-    // const [user] = React.useState();
+    const [isLoader, setIsLoader] = React.useState('none');
+    const [showText, setShowText] = React.useState('flex');
+    const [isBtnDisabled, setIsBtnDisabled] = React.useState(false);
+
+    React.useEffect(() => {
+        setShowText('flex');
+        setIsLoader('none');
+    }, []);
 
     return (
         <View style={style.container}>
             <TouchableOpacity
+                disabled={isBtnDisabled}
                 onPress={() => {
-                    // navigation.navigate('SignIn');
-                    auth()
-                        .signOut()
+                    auth().signOut()
                         .then(() => {
-                            // alert('User signed out!')
-                            navigation.navigate('SignIn');
+                            setShowText('none');
+                            setIsLoader('flex');
+                            setIsBtnDisabled(true)
+                            navigation.replace('SignIn');
                         });
+
                 }}
                 style={style.btn}>
-                <Text style={style.text}>logout</Text>
+                <Text style={[style.text, { display: showText }]}>logout</Text>
             </TouchableOpacity>
+            <ActivityIndicator style={{
+                position: 'absolute',
+                display: isLoader,
+            }} size={'large'} color={'#fff'} />
         </View >
     );
 }
@@ -46,5 +58,6 @@ const style = StyleSheet.create({
         fontWeight: 'bold',
         textAlign: 'center',
         color: '#fff',
+
     },
 });
