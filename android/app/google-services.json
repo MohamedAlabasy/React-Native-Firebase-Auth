@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "704333573158",
+    "project_id": "market-auth-512b5",
+    "storage_bucket": "market-auth-512b5.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:704333573158:android:501f8dfcf6aa8015428ae7",
+        "android_client_info": {
+          "package_name": "com.marketapp"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "704333573158-li0f47olgfv7sq1o7k5r275k8fd8eg8i.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBwiwiiiG_sPUlJDZxym4j-ynRYm9XhMmg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "704333573158-li0f47olgfv7sq1o7k5r275k8fd8eg8i.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
